@@ -1,0 +1,35 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="zipfile" />
+            <item index="1" class="java.lang.String" itemvalue="shutil" />
+            <item index="2" class="java.lang.String" itemvalue="subprocess" />
+            <item index="3" class="java.lang.String" itemvalue="sys" />
+            <item index="4" class="java.lang.String" itemvalue="adb" />
+            <item index="5" class="java.lang.String" itemvalue="re" />
+            <item index="6" class="java.lang.String" itemvalue="pickle" />
+            <item index="7" class="java.lang.String" itemvalue="tkinter" />
+            <item index="8" class="java.lang.String" itemvalue="frida" />
+            <item index="9" class="java.lang.String" itemvalue="Requests" />
+            <item index="10" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="11" class="java.lang.String" itemvalue="Flusk" />
+            <item index="12" class="java.lang.String" itemvalue="Flask" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

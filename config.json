@@ -1,0 +1,10 @@
+{
+  "Telegram": {
+    "bot_token": "8165597496:AAHuaHS7dFlzV0yuzUrEv34HlqtT3Ha7lxQ",
+    "chat_id": "1036024678",
+    "allowed_user_ids": [
+      1036024678,
+      521007870
+    ]
+  }
+}

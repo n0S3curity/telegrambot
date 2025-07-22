@@ -93,12 +93,26 @@ class TelegramBot:
             await self._send_unauthorized_message(update, context)
             return
 
-        irrigation_status = {
-            "status": "Active",
-            "last_run": "2023-10-01 12:00:00",
-            "next_run": "2023-10-01 18:00:00"
-        }
-        json_string = json.dumps(irrigation_status, indent=4)
+        irrigation_status = {}
+        # send get status request to the irrigation system API
+        try:
+            response = requests.get("http://192.168.3.23:5000/api/status")  # Replace with actual API URL
+            response.raise_for_status()
+            irrigation_status = response.json()  # Assuming the API returns JSON data
+        except Exception as e:
+            print(f"Error fetching irrigation status: {e}")
+            irrigation_status = {"error": "Failed to fetch irrigation status."}
+        
+        json_string = {}
+        for sensor in irrigation_status:
+            print(f"Sensor: {sensor}")
+            moisture_value = irrigation_status.get(sensor, {}).get('moisture', 0)
+            sensor_data ={}
+            sensor_data['moisture'] = moisture_value
+            sensor_data['moisture_percentage'] = f"{int((moisture_value / 1024) * 100)}%"
+            sensor_data['status'] = "wet" if moisture_value < 400 else "dry"
+            json_string[sensor] = sensor_data # Convert to percentage
+            
         message_text = f"Irrigation Status \n```json\n{json_string}\n```"
 
         # --- IMPORTANT CHANGE: Sends only to the user who requested it ---

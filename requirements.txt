@@ -1,0 +1,4 @@
+requests~=2.32.4
+Flask~=3.0.0
+asyncio
+python-telegram-bot==20.x

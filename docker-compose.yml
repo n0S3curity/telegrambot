@@ -1,0 +1,10 @@
+services:
+  telegram-bot-app: # Name your service
+    build: . # Build the Docker image using the Dockerfile in the current directory
+    container_name: my-telegram-bot # Give the container a specific name
+    restart: always # Always restart the container if it stops
+    ports:
+      - "5008:5008" # Map port 5008 from the container to port 5008 on the host
+    volumes:
+      - .:/app
+
